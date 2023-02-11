@@ -1,25 +1,25 @@
 {
-  "name": "driver",
+  "name": "host",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "sourceRoot": "apps/driver/src",
+  "sourceRoot": "apps/host/src",
   "prefix": "driver",
   "targets": {
     "build": {
       "executor": "@nrwl/angular:webpack-browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/driver",
-        "index": "apps/driver/src/index.html",
-        "main": "apps/driver/src/main.ts",
+        "outputPath": "dist/apps/host",
+        "index": "apps/host/src/index.html",
+        "main": "apps/host/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/driver/tsconfig.app.json",
+        "tsConfig": "apps/host/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/driver/src/favicon.ico", "apps/driver/src/assets"],
-        "styles": ["apps/driver/src/styles.scss"],
+        "assets": ["apps/host/src/favicon.ico", "apps/host/src/assets"],
+        "styles": ["apps/host/src/styles.scss"],
         "scripts": [],
         "customWebpackConfig": {
-          "path": "apps/driver/webpack.config.js"
+          "path": "apps/host/webpack.config.js"
         }
       },
       "configurations": {
@@ -38,7 +38,7 @@
           ],
           "outputHashing": "all",
           "customWebpackConfig": {
-            "path": "apps/driver/webpack.prod.config.js"
+            "path": "apps/host/webpack.prod.config.js"
           }
         },
         "development": {
@@ -53,61 +53,45 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@nrwl/angular:webpack-dev-server",
+      "executor": "@nrwl/angular:module-federation-dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "driver:build:production"
+          "browserTarget": "host:build:production"
         },
         "development": {
-          "browserTarget": "driver:build:development"
+          "browserTarget": "host:build:development"
         }
       },
       "defaultConfiguration": "development",
       "options": {
-        "port": 4201,
-        "publicHost": "http://localhost:4201"
+        "port": 4200,
+        "publicHost": "http://localhost:4200"
       }
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "driver:build"
+        "browserTarget": "host:build"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/driver/**/*.ts", "apps/driver/**/*.html"]
+        "lintFilePatterns": ["apps/host/**/*.ts", "apps/host/**/*.html"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/driver/jest.config.ts",
+        "jestConfig": "apps/host/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
         "ci": {
           "ci": true,
           "codeCoverage": true
-        }
-      }
-    },
-    "serve-static": {
-      "executor": "@nrwl/angular:file-server",
-      "defaultConfiguration": "development",
-      "options": {
-        "buildTarget": "driver:build",
-        "port": 4201
-      },
-      "configurations": {
-        "development": {
-          "buildTarget": "driver:build:development"
-        },
-        "production": {
-          "buildTarget": "driver:build:production"
         }
       }
     }
