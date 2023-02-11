@@ -2,7 +2,9 @@
   "name": "driver",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build":"nx build driver"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~15.1.0",
