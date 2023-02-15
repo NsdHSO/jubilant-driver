@@ -1,1 +1,16 @@
-<p>landing works!</p>
+<div *ngIf="dataSource">
+  <elix-table [dataSource]="dataSource">
+    <elix-column-text
+      className="driver-name"
+      field="name"
+      name="Name"
+    >
+    </elix-column-text>
+    <elix-column-text
+      className="driver-age"
+      field="age"
+      name="Age"
+    >
+    </elix-column-text>
+  </elix-table>
+</div>
