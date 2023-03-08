@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "nx build driver"
+    "build": "nx build driver",
+    "start:driver": "nx serve driver --open"
   },
   "private": true,
   "dependencies": {
