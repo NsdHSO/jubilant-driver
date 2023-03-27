@@ -37,6 +37,168 @@ export class LandingComponent implements OnInit {
         houseNumber: 22
       }
     }
+  } ,{
+    personalInfo: {
+      name: 'Ion',
+      age: 2,
+      address: {
+        street: 'Ivan',
+        houseNumber: 22
+      }
+    }
+  }, {
+    personalInfo: {
+      name: 'Ion',
+      age: 2,
+      address: {
+        street: 'Ivan',
+        houseNumber: 22
+      }
+    }
+  } ,{
+    personalInfo: {
+      name: 'Ion',
+      age: 2,
+      address: {
+        street: 'Ivan',
+        houseNumber: 22
+      }
+    }
+  }, {
+    personalInfo: {
+      name: 'Ion',
+      age: 2,
+      address: {
+        street: 'Ivan',
+        houseNumber: 22
+      }
+    }
+  } ,{
+    personalInfo: {
+      name: 'Ion',
+      age: 2,
+      address: {
+        street: 'Ivan',
+        houseNumber: 22
+      }
+    }
+  }, {
+    personalInfo: {
+      name: 'Ion',
+      age: 2,
+      address: {
+        street: 'Ivan',
+        houseNumber: 22
+      }
+    }
+  } ,{
+    personalInfo: {
+      name: 'Ion',
+      age: 2,
+      address: {
+        street: 'Ivan',
+        houseNumber: 22
+      }
+    }
+  }, {
+    personalInfo: {
+      name: 'Ion',
+      age: 2,
+      address: {
+        street: 'Ivan',
+        houseNumber: 22
+      }
+    }
+  } ,{
+    personalInfo: {
+      name: 'Ion',
+      age: 2,
+      address: {
+        street: 'Ivan',
+        houseNumber: 22
+      }
+    }
+  }, {
+    personalInfo: {
+      name: 'Ion',
+      age: 2,
+      address: {
+        street: 'Ivan',
+        houseNumber: 22
+      }
+    }
+  } ,{
+    personalInfo: {
+      name: 'Ion',
+      age: 2,
+      address: {
+        street: 'Ivan',
+        houseNumber: 22
+      }
+    }
+  }, {
+    personalInfo: {
+      name: 'Ion',
+      age: 2,
+      address: {
+        street: 'Ivan',
+        houseNumber: 22
+      }
+    }
+  } ,{
+    personalInfo: {
+      name: 'Ion',
+      age: 2,
+      address: {
+        street: 'Ivan',
+        houseNumber: 22
+      }
+    }
+  }, {
+    personalInfo: {
+      name: 'Ion',
+      age: 2,
+      address: {
+        street: 'Ivan',
+        houseNumber: 22
+      }
+    }
+  } ,{
+    personalInfo: {
+      name: 'Ion',
+      age: 2,
+      address: {
+        street: 'Ivan',
+        houseNumber: 22
+      }
+    }
+  }, {
+    personalInfo: {
+      name: 'Ion',
+      age: 2,
+      address: {
+        street: 'Ivan',
+        houseNumber: 22
+      }
+    }
+  } ,{
+    personalInfo: {
+      name: 'Ion',
+      age: 2,
+      address: {
+        street: 'Ivan',
+        houseNumber: 22
+      }
+    }
+  }, {
+    personalInfo: {
+      name: 'Ion',
+      age: 2,
+      address: {
+        street: 'Ivan',
+        houseNumber: 22
+      }
+    }
   } ]
 
   ngOnInit(): void{
