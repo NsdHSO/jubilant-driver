@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataSourceMaterialTable } from "ngx-liburg";
+import { LandingService } from "../../utils/landing.service";
+import { Subject } from "rxjs";
+import { ActivatedRoute } from "@angular/router";
 
 export interface Driver {
   personalInfo: {
@@ -37,7 +40,7 @@ export class LandingComponent implements OnInit {
         houseNumber: 22
       }
     }
-  } ,{
+  }, {
     personalInfo: {
       name: 'Ion',
       age: 2,
@@ -55,7 +58,7 @@ export class LandingComponent implements OnInit {
         houseNumber: 22
       }
     }
-  } ,{
+  }, {
     personalInfo: {
       name: 'Ion',
       age: 2,
@@ -73,7 +76,7 @@ export class LandingComponent implements OnInit {
         houseNumber: 22
       }
     }
-  } ,{
+  }, {
     personalInfo: {
       name: 'Ion',
       age: 2,
@@ -91,7 +94,7 @@ export class LandingComponent implements OnInit {
         houseNumber: 22
       }
     }
-  } ,{
+  }, {
     personalInfo: {
       name: 'Ion',
       age: 2,
@@ -109,7 +112,7 @@ export class LandingComponent implements OnInit {
         houseNumber: 22
       }
     }
-  } ,{
+  }, {
     personalInfo: {
       name: 'Ion',
       age: 2,
@@ -127,7 +130,7 @@ export class LandingComponent implements OnInit {
         houseNumber: 22
       }
     }
-  } ,{
+  }, {
     personalInfo: {
       name: 'Ion',
       age: 2,
@@ -145,7 +148,7 @@ export class LandingComponent implements OnInit {
         houseNumber: 22
       }
     }
-  } ,{
+  }, {
     personalInfo: {
       name: 'Ion',
       age: 2,
@@ -163,7 +166,7 @@ export class LandingComponent implements OnInit {
         houseNumber: 22
       }
     }
-  } ,{
+  }, {
     personalInfo: {
       name: 'Ion',
       age: 2,
@@ -181,7 +184,7 @@ export class LandingComponent implements OnInit {
         houseNumber: 22
       }
     }
-  } ,{
+  }, {
     personalInfo: {
       name: 'Ion',
       age: 2,
@@ -200,17 +203,30 @@ export class LandingComponent implements OnInit {
       }
     }
   } ]
+  private _destroyed = new Subject();
+
+  constructor(
+    private readonly _landingService: LandingService,
+    private readonly _activatedRoute: ActivatedRoute){
+  }
 
   ngOnInit(): void{
-    this.dataSource = this.listDriver.map(driver => {
-        const model = {name: driver.personalInfo.name, age: driver.personalInfo.age}
-        return{
-          actions: [{ iconClass: '', classCss: '', method: (row: Driver) => console.log(row)}],
-          editable: true,
-          model: {
-            ...model
-          }
-        } as DataSourceMaterialTable<any>
+
+    this.dataSource = this._activatedRoute.snapshot.data[ 'drivers' ].map((driver: any) => {
+      const model = {
+        ...driver
+      }
+      return {
+        actions: [ {
+          iconClass: "fa_solid:gauge",
+          classCss: "edit",
+          method: (row: Driver) => console.log(row)
+        } ],
+        editable: true,
+        model: {
+          ...model
+        }
+      } as DataSourceMaterialTable<any>
     })
   }
 }

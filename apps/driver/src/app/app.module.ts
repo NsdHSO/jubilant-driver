@@ -2,11 +2,17 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from "@angular/common/http";
+import { fakeBackendProvider } from "./remote-entry/fakebackend";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { IconCoreModule } from "ngx-liburg-icon";
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [ AppComponent ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
+    IconCoreModule,
     RouterModule.forRoot(
       [
         {
@@ -19,8 +25,10 @@ import { AppComponent } from './app.component';
       ],
       { initialNavigation: 'enabledBlocking' }
     ),
+    HttpClientModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent],
+  providers: [ fakeBackendProvider ],
+  bootstrap: [ AppComponent ],
 })
-export class AppModule {}
+export class AppModule {
+}

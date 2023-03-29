@@ -1,16 +1,28 @@
-<div *ngIf="dataSource">
-  <elix-table [dataSource]="dataSource">
+<div *ngIf="dataSource"
+     class="drivers-container">
+  <elix-table [dataSource]="dataSource"
+              [footerLabel]="'Total'"
+              [footerAmount]="true"
+              footerColumn="revenu"
+              [zebraColor]="true"
+  >
     <elix-column-text
       className="driver-name"
-      field="name"
+      field="first_name"
       name="Name"
     >
     </elix-column-text>
     <elix-column-text
-      className="driver-age"
-      field="age"
-      name="Age"
+      className="driver-revenu"
+      field="revenu"
+      name="Revenu"
     >
     </elix-column-text>
+    <elix-column-icon-action
+      className="action"
+      field="action2"
+      name="Action">
+
+    </elix-column-icon-action>
   </elix-table>
 </div>
