@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
-import { LandingDriverRoutingModule } from './landing-driver-routing.module';
+import { TableMaterialModule } from 'ngx-liburg';
 import { LandingComponent } from './components/landing/landing.component';
-import { TableMaterialModule } from "ngx-liburg";
+import { LandingDriverRoutingModule } from './landing-driver-routing.module';
 
 @NgModule({
   declarations: [ LandingComponent ],

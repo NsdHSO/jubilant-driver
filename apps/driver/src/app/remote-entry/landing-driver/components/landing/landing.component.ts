@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
 import { DataSourceMaterialTable } from "ngx-liburg";
 import { LandingService } from "../../utils/landing.service";
-import { ActivatedRoute } from "@angular/router";
 
 export interface Driver {
   personalInfo: {
