@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { DataSourceMaterialTable } from "ngx-liburg";
-import { LandingService } from "../../utils/landing.service";
 
 export interface Driver {
   personalInfo: {
@@ -25,6 +24,7 @@ export class LandingComponent {
     const model = {
       ...driver
     }
+    this._landingService.markForCheck()
     return {
       actions: [ {
         iconClass: "fa_solid:gauge",
@@ -39,7 +39,7 @@ export class LandingComponent {
   })
 
   constructor (
-    private readonly _landingService: LandingService,
+    private readonly _landingService: ChangeDetectorRef,
     private readonly _activatedRoute: ActivatedRoute){
   }
 }
